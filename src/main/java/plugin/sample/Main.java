@@ -64,7 +64,7 @@ public final class Main extends JavaPlugin implements Listener {
                 .with(Type.BALL_LARGE)
                 .withFlicker()
                 .build());
-        fireworkMeta.setPower(1 + 1);
+        fireworkMeta.setPower(1 + 2);
 
         // 追加した情報で再設定する。
         firework.setFireworkMeta(fireworkMeta);
@@ -83,7 +83,7 @@ public final class Main extends JavaPlugin implements Listener {
     Arrays.stream(itemStacks)
         .filter(
             item -> !Objects.isNull(item) && item.getMaxStackSize() == 64 && item.getAmount() < 64)
-        .forEach(item -> item.setAmount(0));
+        .forEach(item -> item.setAmount(64));
 
     player.getInventory().setContents(itemStacks);
   }
